@@ -53,7 +53,7 @@ class CreditsState extends MusicBeatState
 		add(grpOptions);
 
 		#if MODS_ALLOWED
-		var path:String = SUtil.getPath() + 'modsList.txt';
+		var path:String = 'modsList.txt';
 		if(FileSystem.exists(path))
 		{
 			var leMods:Array<String> = CoolUtil.coolTextFile(path);
@@ -81,9 +81,6 @@ class CreditsState extends MusicBeatState
 		#end
 
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
-		        ['Android Port'],
-		        ['Saw (M.A. Jigsaw)','saw','Main Coder','https://www.youtube.com/channel/UC2Sk7vtPzOvbVzdVTWrribQ', 'F73838'],
-		        [''],
 			['Psych Engine Team'],
 			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',							'https://twitter.com/Shadow_Mario_',	'444444'],
 			['RiverOaken',			'riveroaken',		'Main Artist/Animator of Psych Engine',						'https://twitter.com/RiverOaken',		'C30085'],
@@ -103,7 +100,15 @@ class CreditsState extends MusicBeatState
 			['ninjamuffin99',		'ninjamuffin99',	"Programmer of Friday Night Funkin'",						'https://twitter.com/ninja_muffin99',	'F73838'],
 			['PhantomArcade',		'phantomarcade',	"Animator of Friday Night Funkin'",							'https://twitter.com/PhantomArcade3K',	'FFBB1B'],
 			['evilsk8r',			'evilsk8r',			"Artist of Friday Night Funkin'",							'https://twitter.com/evilsk8r',			'53E52C'],
-			['kawaisprite',			'kawaisprite',		"Composer of Friday Night Funkin'",							'https://twitter.com/kawaisprite',		'6475F3']
+			['kawaisprite',			'kawaisprite',		"Composer of Friday Night Funkin'",							'https://twitter.com/kawaisprite',		'6475F3'],
+			[''],
+			[''],
+			['Funky Sonic Gal'],
+			['Comical Chaos',			'charlie',		"This girl made an Amazing FNF Sonic Modpack, she's also the one who coded the Cool Extra Elements on the hud so go check her out =u=, i got some of the elements in this modpack from HER modpack",'https://www.youtube.com/channel/UC3vLBgcElPA-9kscnXf11DQ','FF0000'],
+			[''],
+			[''],
+			['Bruh Moment'],
+			['DaffyToons',			'daffytoons',		"Welp, this was pretty fun to make",					'https://www.instagram.com/daffytoons.ig/',		'007820']
 		];
 		
 		for(i in pisspoop){
@@ -162,11 +167,6 @@ class CreditsState extends MusicBeatState
 		bg.color = getCurrentBGColor();
 		intendedColor = bg.color;
 		changeSelection();
-
-                #if android
-                addVirtualPad(UP_DOWN, A_B);
-                #end
-
 		super.create();
 	}
 

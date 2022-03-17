@@ -49,7 +49,6 @@ class MainMenuState extends MusicBeatState
 
 	override function create()
 	{
-		WeekData.loadTheFirstEnabledMod();
 
 		#if desktop
 		// Updating Discord Rich Presence
@@ -153,10 +152,6 @@ class MainMenuState extends MusicBeatState
 		}
 		#end
 
-                #if android
-                addVirtualPad(UP_DOWN, A_B_E);
-                #end
-
 		super.create();
 	}
 
@@ -255,11 +250,13 @@ class MainMenuState extends MusicBeatState
 					});
 				}
 			}
-			else if (FlxG.keys.anyJustPressed(debugKeys) #if android || _virtualpad.buttonE.justPressed #end)
+			#if desktop
+			else if (FlxG.keys.anyJustPressed(debugKeys))
 			{
 				selectedSomethin = true;
 				MusicBeatState.switchState(new MasterEditorMenu());
 			}
+			#end
 		}
 
 		super.update(elapsed);
