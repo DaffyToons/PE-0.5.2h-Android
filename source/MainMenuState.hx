@@ -49,7 +49,6 @@ class MainMenuState extends MusicBeatState
 
 	override function create()
 	{
-		WeekData.setDirectoryFromWeek();
 
 		#if desktop
 		// Updating Discord Rich Presence
